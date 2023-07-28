@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+
+    <style>
+
+body {
+  background-color: #ccc;
+  font: 16px "Helvetica Neue";
+  font-weight: 200;
+  letter-spacing: 1.5px;
+}
+
+.container {
+  width: 400px;
+  background-color: #fff;
+  margin: 40px auto auto;
+  padding: 8px 0 20px 0;
+  height: 900px;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+}
+
+.form-item {
+  margin: 18px auto;
+  border-bottom: 1px solid #000;
+
+}
+
+
+
+input {
+
+  width: 100%;
+  padding: 0 0 6px 0;
+  background-color: #fff;
+  color: #000;
+  font: 16px "Helvetica Neue";
+  font-weight: 200;
+  letter-spacing: 1.5px;
+  outline: none;
+  border: none;
+}
+
+.button{
+background-color:#008CBA;
+padding: 15px 32px;
+font-size: 16px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <form method="POST" class="post-form" action="/register/" enctype="multipart/form-data">
+      {% csrf_token %}
+
+        <img src="{%static "images/a.jpg" %}" >
+        <img class="center" src="{%static "images/b.png" %}" >
+
+        <h4 align="center">Campaign test message</h4>
+       <div class="form-item left">
+            <label for="first name"></label>
+            <input name="fname" type="text" placeholder="First Name" required autofocus></input>
+       </div>
+
+            <br>
+
+        <div class="form-item" >
+             <label for="last name"></label>
+             <input name="lname" type="text" placeholder="Last Name" required autofocus></input>
+        </div>
+
+     <br>
+
+         <div class="form-item">
+              <label for="phone"></label>
+              <input name="phone" type="tel" placeholder="Mobile" required></input>
+         </div>
+
+                <br>
+
+        <div class="form-item">
+          <label for="email"></label>
+            <input name="email" type="email" placeholder="Email" required></input>
+        </div>
+
+            <br>
+            <input type="file" multiple name="uploadfiles">
+
+
+        <br>
+
+        <div align="center">
+            <button  class="button" type="submit">Preview</button>
+        </div>
+
+        <br>
+        <a href="/terms" style="float: right;">Click here for T&C</a>
+
+    </form>
+  </div>
+</body>
+</html>
